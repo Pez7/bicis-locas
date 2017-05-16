@@ -3,6 +3,7 @@ var nombre = document.getElementById("name").value;
 var apellido = document.getElementById("lastname").value;
 var email = document.getElementById("input-email").value;
 var password = document.getElementById("input-password").value;
+var opciones = document.getElementById("opciones").selectedIndex;
  
 if (nombre.charAt(0) != nombre.charAt(0).toUpperCase() || nombre.length == 0 || nombre == ""){
 
@@ -52,6 +53,17 @@ if (password == "123456" || password == "098765" || password.length <= 6){
 	return caja;
 	}
 
+if (opciones == 0 || opciones == null) {
+
+	var caja = document.createElement('span');
+	var contenedor = document.getElementById("opciones");
+	var caja1 = contenedor.parentNode;
+	caja1.appendChild(caja);
+	var texto = document.createTextNode("Debes seleccionar una opción");	                   
+	caja.appendChild(texto);
+
+	return caja;
+	}
 
 
 }
